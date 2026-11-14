@@ -1,0 +1,37 @@
+[Unit]
+Description=Uli UpS per-project agent for site
+After=local-fs.target
+RequiresMountsFor=/opt/site/UliUpS
+
+[Service]
+Type=exec
+User=uliups-site
+Group=uliups-site
+WorkingDirectory=/opt/site/UliUpS
+ExecStart=/opt/site/UliUpS/bin/uli-ups serve --config /opt/site/UliUpS/agent.json
+Restart=on-failure
+RestartSec=3s
+TimeoutStopSec=10s
+KillSignal=SIGTERM
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/opt/site/UliUpS/state /opt/site/UliUpS/sources
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+RestrictRealtime=yes
+LockPersonality=yes
+RestrictAddressFamilies=AF_UNIX
+SystemCallArchitectures=native
+LimitNOFILE=1024
+MemoryMax=512M
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

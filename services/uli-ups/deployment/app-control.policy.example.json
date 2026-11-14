@@ -1,0 +1,8 @@
+{
+  "policy_version": 1,
+  "instance_id": "site-production",
+  "agent_uid": 996,
+  "runtime_uid": 997,
+  "application_unit": "site-web.service",
+  "operation_timeout_ms": 3000
+}

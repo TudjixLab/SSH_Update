@@ -1,0 +1,13 @@
+{
+  "config_version": 1,
+  "instance_id": "site-production",
+  "app_id": "site",
+  "profile_id": "nextjs-systemd",
+  "agent_home": "/opt/site/UliUpS",
+  "trust": {
+    "public_key_hex": "REPLACE_WITH_64_LOWERCASE_HEX_PROJECT_PUBLIC_KEY",
+    "target_runtime": "node-24",
+    "health_policy_id": "site-http",
+    "minimum_sequence": 1
+  }
+}
