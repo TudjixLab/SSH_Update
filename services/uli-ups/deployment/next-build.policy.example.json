@@ -1,0 +1,18 @@
+{
+  "policy_version": 1,
+  "instance_id": "site-production",
+  "agent_uid": 996,
+  "runtime_uid": 995,
+  "runtime_gid": 986,
+  "runtime_root": "/opt/site/uliups-runtime",
+  "cache_directory": "/var/cache/uliups-site-build",
+  "node_executable": "/usr/bin/node",
+  "npm_entrypoint": "/usr/share/nodejs/npm/bin/npm-cli.js",
+  "node_major": 22,
+  "build_unit": "uliups-site-build.service",
+  "install_deadline_ms": 600000,
+  "build_deadline_ms": 600000,
+  "max_memory_bytes": 2147483648,
+  "max_tasks": 128,
+  "max_cpu_percent": 200
+}

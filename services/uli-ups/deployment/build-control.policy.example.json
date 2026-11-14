@@ -1,0 +1,8 @@
+{
+  "policy_version": 1,
+  "instance_id": "site-production",
+  "agent_uid": 996,
+  "runtime_uid": 995,
+  "application_unit": "uliups-site-build.service",
+  "operation_timeout_ms": 3000
+}

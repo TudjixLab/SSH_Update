@@ -1,0 +1,49 @@
+# INTEGRATION TEMPLATE ONLY: controller/Store binding is not enabled yet.
+# Replace sample users, numeric identities, paths and limits after host inspection.
+[Unit]
+Description=Uli UpS isolated per-project Next.js build worker
+After=network-online.target
+Wants=network-online.target
+RequiresMountsFor=/opt/site/UliUpS /opt/site/uliups-runtime /var/cache/uliups-site-build
+
+[Service]
+Type=oneshot
+User=site-build
+Group=site-deploy
+WorkingDirectory=/opt/site/uliups-runtime/build-current
+# Expose only the immutable worker executable, not the private agent directory.
+BindReadOnlyPaths=/opt/site/UliUpS/bin/uli-ups:/opt/site/uliups-runtime/worker-bin
+ExecStart=/opt/site/uliups-runtime/worker-bin build-worker --policy /etc/uliups/site-build.json
+UMask=0007
+TimeoutStartSec=21min
+TimeoutStopSec=10s
+KillMode=control-group
+SendSIGKILL=yes
+Restart=no
+NoNewPrivileges=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectControlGroups=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectClock=yes
+ProtectHostname=yes
+RestrictSUIDSGID=yes
+RestrictRealtime=yes
+LockPersonality=yes
+Delegate=no
+InaccessiblePaths=/run/user /run/dbus /run/systemd/private
+ReadWritePaths=/opt/site/uliups-runtime/build-current /var/cache/uliups-site-build
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+MemoryMax=2G
+TasksMax=128
+CPUQuota=200%
+LimitNOFILE=4096
+StandardOutput=journal
+StandardError=journal
+

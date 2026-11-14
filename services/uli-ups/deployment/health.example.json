@@ -1,0 +1,8 @@
+{
+  "address": "127.0.0.1",
+  "port": 3000,
+  "path": "/api/health",
+  "deadline_ms": 3000,
+  "expected_status": 200,
+  "release_header": "x-uliups-release"
+}

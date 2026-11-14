@@ -1,0 +1,12 @@
+# Future agent drop-in; DO NOT install before controller/Store acceptance.
+[Unit]
+RequiresMountsFor=/opt/site/uliups-runtime
+
+[Service]
+# Local HTTP health probes need TCP; public listening sockets are not created.
+RestrictAddressFamilies=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+ReadWritePaths=/opt/site/uliups-runtime
+# Add the actual site-deploy GID membership when preparing the host.
+SupplementaryGroups=site-deploy
+
