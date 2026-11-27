@@ -1,4 +1,11 @@
-# Uli UpS 0.1.0 alpha
+# SSH Update Agent 0.1.0 alpha
+
+SSH Update Agent is a standalone Rust agent embedded in one Linux project. This alpha
+provides a running daemon and tested deployment components. Automatic application
+activation, rollback and agent self-update are not enabled.
+
+> The Rust package, executable and systemd unit retain the historical internal name
+> `uli-ups` for compatibility. The public product name is SSH Update.
 
 Uli UpS is a standalone Rust agent embedded in one Linux project. This alpha
 provides a running daemon and tested deployment components. Automatic application

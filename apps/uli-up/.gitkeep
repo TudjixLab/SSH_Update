@@ -1,2 +1,3 @@
-# Uli Up — графический клиент для Windows и Linux.
-# Создание и подпись пакетов .uli4, отправка обновлений и просмотр результатов.
+# SSH Update — desktop client for Windows and Linux.
+# Create and sign .uli4 packages, send updates, and inspect deployment results.
+# The historical directory name is retained until the client package identity is finalized.
